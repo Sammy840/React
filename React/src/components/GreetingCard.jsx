@@ -12,7 +12,7 @@ const GreetingCard = ({ name, msg, mood }) => {
       color: dynamicColor, 
       padding: '15px', 
       margin: '10px',
-      borderRadius: '10px' 
+      borderRadius: '10px'
     }}>
       <h1>{name}, {msg}</h1>
       <strong>Status: {mood}</strong>
@@ -21,3 +21,20 @@ const GreetingCard = ({ name, msg, mood }) => {
 };
 
 export default GreetingCard;
+
+
+
+// import React from 'react'
+
+// const GreetingCard = ({ name, msg , mood}) => {
+
+//   const color = mood === "Happy" ? "green" : "blue";
+
+//   return (
+//     <div style={{color: `${color}`}}>
+//       {name}, {msg}
+//     </div>
+//   )
+// }
+
+// export default GreetingCard;
