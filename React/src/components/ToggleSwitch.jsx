@@ -16,7 +16,7 @@ const ToggleSwitch = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        transition: "background-color 0.3s ease"
+        transition: "background-color 0.3s ease-in-out"
     }}>
         <h1>Toggle Switch</h1>
         <p>The light is {isOn ? "ON" : "OFF"}</p>

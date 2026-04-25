@@ -6,6 +6,7 @@ import GreetingCard from './components/GreetingCard';
 import Counter from './components/Counter';
 import ToggleSwitch from './components/ToggleSwitch';
 import ControlledInput from './components/ControlledInput';
+import Todo from './components/Todo';
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
       {/* <GreetingCard name="Sam" msg="you are welcome" mood="Happy" /> */}
       {/* <Counter /> */}
       {/* <ToggleSwitch /> */}
-      <ControlledInput />
+      {/* <ControlledInput /> */}
+      <Todo />
     </div>
   )
 }
