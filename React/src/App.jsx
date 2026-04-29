@@ -7,6 +7,8 @@ import Counter from './components/Counter';
 import ToggleSwitch from './components/ToggleSwitch';
 import ControlledInput from './components/ControlledInput';
 import Todo from './components/Todo';
+import TodoAppWithFilter from './components/TodoAppWithFilter';
+import TodoApp from './components/TodoApp';
 
 const App = () => {
   return (
@@ -18,7 +20,9 @@ const App = () => {
       {/* <Counter /> */}
       {/* <ToggleSwitch /> */}
       {/* <ControlledInput /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <TodoAppWithFilter />
+      {/* <TodoApp /> */}
     </div>
   )
 }
