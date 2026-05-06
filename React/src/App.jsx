@@ -21,8 +21,8 @@ const App = () => {
       {/* <ToggleSwitch /> */}
       {/* <ControlledInput /> */}
       {/* <Todo /> */}
-      <TodoAppWithFilter />
-      {/* <TodoApp /> */}
+      {/* <TodoAppWithFilter /> */}
+      <TodoApp />
     </div>
   )
 }
