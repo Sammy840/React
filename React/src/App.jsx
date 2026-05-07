@@ -9,6 +9,8 @@ import ControlledInput from './components/ControlledInput';
 import Todo from './components/Todo';
 import TodoAppWithFilter from './components/TodoAppWithFilter';
 import TodoApp from './components/TodoApp';
+import UseEffectHook from './components/UseEffectHook';
+import RandomUserGenerator from './components/RandomUserGenerator';
 
 const App = () => {
   return (
@@ -22,7 +24,9 @@ const App = () => {
       {/* <ControlledInput /> */}
       {/* <Todo /> */}
       {/* <TodoAppWithFilter /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      {/* <UseEffectHook /> */}
+      <RandomUserGenerator />
     </div>
   )
 }
