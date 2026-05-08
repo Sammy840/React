@@ -11,6 +11,7 @@ import TodoAppWithFilter from './components/TodoAppWithFilter';
 import TodoApp from './components/TodoApp';
 import UseEffectHook from './components/UseEffectHook';
 import RandomUserGenerator from './components/RandomUserGenerator';
+import WeatherApp from './components/WeatherApp';
 
 const App = () => {
   return (
@@ -26,7 +27,8 @@ const App = () => {
       {/* <TodoAppWithFilter /> */}
       {/* <TodoApp /> */}
       {/* <UseEffectHook /> */}
-      <RandomUserGenerator />
+      {/* <RandomUserGenerator /> */}
+      <WeatherApp />
     </div>
   )
 }
