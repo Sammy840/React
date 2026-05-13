@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const WeatherApp = () => {
     const [city, setCity] = useState('Benin City');
@@ -30,6 +30,10 @@ const WeatherApp = () => {
         if (!weather) return "#f0f0f0";
         return (weather.main.temp) > 25 ? "#ff8a4292" : "#4896ef8f";
     }
+
+    useEffect(() => {
+        fetchWeather();
+    }, []);
 
   return (
     <div>
