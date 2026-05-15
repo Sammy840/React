@@ -12,6 +12,7 @@ import TodoApp from './components/TodoApp';
 import UseEffectHook from './components/UseEffectHook';
 import RandomUserGenerator from './components/RandomUserGenerator';
 import WeatherApp from './components/WeatherApp';
+import PokemonFinderApp from './components/PokemonFinderApp';
 
 const App = () => {
   return (
@@ -28,7 +29,8 @@ const App = () => {
       {/* <TodoApp /> */}
       {/* <UseEffectHook /> */}
       {/* <RandomUserGenerator /> */}
-      <WeatherApp />
+      {/* <WeatherApp /> */}
+      <PokemonFinderApp />
     </div>
   )
 }
