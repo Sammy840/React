@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 
 const PokemonFinderApp = () => {
 
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("pikachu");
     const [pokemon, setPokemon] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     const searchPokemon = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
         if (!searchTerm) return;
 
         setLoading(true);
@@ -28,6 +28,10 @@ const PokemonFinderApp = () => {
         }
     }
 
+    useEffect(() => {
+        searchPokemon();
+    }, []);
+
     const typeColors = {
         fire: '#FDDFDF',
         grass: '#DEFDE0',
@@ -42,14 +46,13 @@ const PokemonFinderApp = () => {
         <form onSubmit={searchPokemon}>
             <input 
                 type="text" 
-                value={searchTerm}
+                // value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search name or ID (e.g. bulbasaur or 1)"
             />
             <button type='submit'>Search</button>
         </form>
 
-        {/* Step 4: Conditional Rendering of the Pokemon Card */}
         {loading && <p>Searching the Pokedex...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
@@ -122,4 +125,4 @@ const PokemonFinderApp = () => {
     )
 }
 
-export default PokemonFinderApp
+export default PokemonFinderApp;
