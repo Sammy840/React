@@ -13,6 +13,7 @@ import UseEffectHook from './components/UseEffectHook';
 import RandomUserGenerator from './components/RandomUserGenerator';
 import WeatherApp from './components/WeatherApp';
 import PokemonFinderApp from './components/PokemonFinderApp';
+import CryptoTrackerApp from './components/CryptoTrackerApp';
 
 const App = () => {
   return (
@@ -30,7 +31,8 @@ const App = () => {
       {/* <UseEffectHook /> */}
       {/* <RandomUserGenerator /> */}
       {/* <WeatherApp /> */}
-      <PokemonFinderApp />
+      {/* <PokemonFinderApp /> */}
+      < CryptoTrackerApp />
     </div>
   )
 }
