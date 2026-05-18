@@ -8,29 +8,33 @@ const CryptoTrackerApp = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        setLoading(true);
-        setError("");
+    const fetchCoins = async () => {
+        try {
+            setLoading(true);
+            setError("");
+            
+            const apiKey = "CG-9M3SvXyfPx1rR5H5yvyU6VEt"; 
+            
+            const response = await fetch(
+                `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&x_cg_demo_api_key=${apiKey}`
+            );
+            
+            if (!response.ok) throw new Error("Unable to load market data. Please try again later.");
 
-        const fetchCoins = async () => {
-            try {
-                const reponse = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false`);
-                if (!reponse.ok) throw new Error ("Error fetching crypto data")
-
-                const data = await Response.json();
-                setCoins(data);
-            } catch (error) {
-                setError("Error fetching crypto data", error);
-                setCoins([]);
-            } finally {
-                setLoading(false);
-            }
+            const data = await response.json();
+            setCoins(data);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
         }
+    };
 
-        fetchCoins();
+    fetchCoins();
     }, []);
 
     const filteredCoins = coins.filter(coin => {
-        coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        return coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
     })
   return (
@@ -106,7 +110,7 @@ const CryptoTrackerApp = () => {
                                             fontWeight: 'bold', 
                                             color: isPositive ? '#2ec4b6' : '#e71d36' 
                                         }}>
-                                            {isPositive ? '▲ +' : '▼ '}{coin.price_change_percentage_24h?.toFixed(2)}%
+                                            {isPositive ? '▲ +' : '▼ '}{(coin.price_change_percentage_24h ?? 0).toFixed(2)}%
                                         </td>
                                         
                                         <td style={{ padding: '16px', color: '#444' }}>
